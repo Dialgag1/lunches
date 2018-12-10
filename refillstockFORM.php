@@ -69,9 +69,18 @@
     <input type="submit" value="Refill stock">
     </form>
 
-    <form>
     <h4>Add more food options to the stock list here.</h4>
 
+    <form>
+    Food Name:<input type = "text" name = "FoodName"><br>
+    Category: <select name="category">
+              <option value="sandwich">Sandwich</option>
+              <option value="snack">Snack</option>
+              <option value="fruit">Fruit</option>
+              <option value="drink">Drink</option>
+              </select><br><br>
+    <input type="submit" value="Add item">
+    </form 
     <br>
 <h3>Below is the kitchen's stock.</h3>
 <?php
