@@ -73,7 +73,7 @@
 <h3>Below is the kitchen's stock.</h3>
 <?php
 include_once('lunchconnection.php');
-$stmt = $conn->prepare("SELECT * FROM  stock WHERE FoodName != 'none'");
+$stmt = $conn->prepare("SELECT * FROM stock WHERE FoodName != 'none'");
 $stmt->execute();
 
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
