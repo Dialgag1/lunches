@@ -12,35 +12,55 @@
     Email:<input type = "text" name = "email"><br><br> -->
     Now order your food!<br>
     Sandwich:<select name="sandwich">
-            <option value="none">None</option>
-            <option value="hamcheese">Ham and Cheese</option>
-            <option value="pbj">Peanut Butter and Jelly</option>
-            <option value="tomatolettuce">Tomato and Lettuce</option>
-            <option value="club">Club Sandwich</option>
+    <?php
+        include_once("lunchconnection.php");
+        $stmt = $conn->prepare("SELECT * FROM stock WHERE category='sandwich' OR category='none' ORDER BY FoodName ASC;");
+        $stmt->execute();
+        
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+        {
+        echo("<option value=".'"'.$row["FoodID"].'">'.$row["FoodName"]."</option>");
+        }
+    ?>
             </select>
             <br>
     Snack:<select name="snack">
-            <option value="none">None</option>
-            <option value="crisps">Crisps</option>
-            <option value="oreo">Oreos</option>
-            <option value="garlicb">Garlic Bread</option>
-            <option value="chocolate">Chocolate Bar</option>
+    <?php
+        include_once("lunchconnection.php");
+        $stmt = $conn->prepare("SELECT * FROM stock WHERE category='snack' OR category='none' ORDER BY FoodName ASC;");
+        $stmt->execute();
+        
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+        {
+        echo("<option value=".'"'.$row["FoodID"].'">'.$row["FoodName"]."</option>");
+        }
+    ?>
             </select>
             <br>
     Fruit:<select name="fruit">
-            <option value="none">None</option>
-            <option value="pear">Pear</option>
-            <option value="apple">Apple</option>
-            <option value="banana">Banana</option>
-            <option value="orange">Orange</option>
+    <?php
+        include_once("lunchconnection.php");
+        $stmt = $conn->prepare("SELECT * FROM stock WHERE category='fruit' OR category='none' ORDER BY FoodName ASC;");
+        $stmt->execute();
+        
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+        {
+        echo("<option value=".'"'.$row["FoodID"].'">'.$row["FoodName"]."</option>");
+        }
+    ?>
             </select>
             <br>
     Drink:<select name="drink">
-            <option value="none">None</option>
-            <option value="water">Water</option>
-            <option value="applej">Apple Juice</option>
-            <option value="orangej">Orange Juice</option>
-            <option value="grapej">Grape Juice</option>
+    <?php
+        include_once("lunchconnection.php");
+        $stmt = $conn->prepare("SELECT * FROM stock WHERE category='drink' OR category='none' ORDER BY FoodName ASC;");
+        $stmt->execute();
+        
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+        {
+        echo("<option value=".'"'.$row["FoodID"].'">'.$row["FoodName"]."</option>");
+        }
+    ?>
             </select>
             <br>
         Date: <input type = "date" name = "Date"><br>

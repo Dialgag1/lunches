@@ -4,13 +4,13 @@
 array_map("htmlspecialchars", $_POST);
 include_once("lunchconnection.php");
 
-$stmt = $conn->prepare("INSERT INTO pupils (UserID,forename,surname,house,email)VALUES (null,:forename,:surname,:house,:email)");
+// $stmt = $conn->prepare("INSERT INTO pupils (UserID,forename,surname,house,email)VALUES (null,:forename,:surname,:house,:email)");
 
-$stmt->bindParam(":forename", $_POST['forename']);
-$stmt->bindParam(":surname", $_POST['surname']);
-$stmt->bindParam(":house", $_POST['house']);
-$stmt->bindParam(":email", $_POST['email']);
-$stmt->execute();
+// $stmt->bindParam(":forename", $_POST['forename']);
+// $stmt->bindParam(":surname", $_POST['surname']);
+// $stmt->bindParam(":house", $_POST['house']);
+// $stmt->bindParam(":email", $_POST['email']);
+// $stmt->execute();
 
 $stmt = $conn->prepare("INSERT INTO orders (OrderID,sandwich,snack,fruit,drink,Date)VALUES (null,:sandwich,:snack,:fruit,:drink,:date)");
 
