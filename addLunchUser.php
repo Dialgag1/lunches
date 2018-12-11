@@ -1,5 +1,5 @@
 <?php
-// header('Location: Lunches.php');
+header('Location: Lunches.php');
 array_map("htmlspecialchars", $_POST);
 include_once("lunchconnection.php");
 

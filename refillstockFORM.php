@@ -71,7 +71,7 @@
 
     <h4>Add more food options to the stock list here.</h4>
 
-    <form>
+    <form action="additem.php" method="post">
     Food Name:<input type = "text" name = "FoodName"><br>
     Category: <select name="category">
               <option value="sandwich">Sandwich</option>
@@ -80,8 +80,16 @@
               <option value="drink">Drink</option>
               </select><br><br>
     <input type="submit" value="Add item">
-    </form 
+    </form>
+    
+    <h4>Delete an item from the stock list here.</h4>
+
+    <form action="deleteitem.php" method="post">
+    Food ID:<input type = "text" name = "FoodID"><br>
+    <input type="submit" value="Delete item">
+    </form>
     <br>
+
 <h3>Below is the kitchen's stock.</h3>
 <?php
 include_once('lunchconnection.php');
@@ -90,7 +98,7 @@ $stmt->execute();
 
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 {
-echo($row["FoodName"].' : '.$row["Quantity"]."<br>");
+echo("ID ".$row["FoodID"].' - '.$row["FoodName"].' : '.$row["Quantity"]."<br>");
 }
 ?>
 
